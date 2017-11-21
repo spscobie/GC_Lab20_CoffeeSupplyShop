@@ -35,9 +35,19 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
 
         public ActionResult DB_InsertNewUser (User user)
         {
-            ViewBag.FirstName = user.FirstName;
+            if (ModelState.IsValid)
+            {
+                //Added the object NewProduct to the DB!
+                //confirmation
+                ViewBag.FirstName = user.FirstName;
 
-            return View();
+                return View();
+            }
+            else
+            {
+                // redirect user back to the form
+                return View("RegisterNewUser");
+            }
         }
     }
 }

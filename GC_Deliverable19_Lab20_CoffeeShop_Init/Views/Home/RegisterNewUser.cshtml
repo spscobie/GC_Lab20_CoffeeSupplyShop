@@ -3,7 +3,6 @@
     ViewBag.Title = "RegisterNewUser";
 }
 
-<h2>New User Registration</h2>
 
 @model GC_Deliverable19_Lab20_CoffeeShop_Init.Models.User
 <!--
@@ -28,36 +27,110 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <form action="/Home/DB_InsertNewUser" method="post">
+            <form action="/Home/DB_InsertNewUser" method="post" class="pull-right">
+                <h1 id="registrationPageLogo" class="col">Groundswell</h1>
+                <h2 id="registrationHeading">New User Registration</h2>
                 <div class="form-group">
-                    <label for="userFirstName">First Name</label>
+                    <label id="lblUserFirstName" for="userFirstName">First Name</label>
                     <input type="text" class="form-control" id="userFirstName" aria-describedby="emailHelp" placeholder="Enter first name" name="FirstName" required>
                     <small id="firstNameHelp" class="form-text text-muted">Required</small>
-                    <div class="invalid-feedback">
-                        Please provide a valid first name.
-                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="userLastName">Last Name</label>
+                    <label id="lblUserLastName" for="userLastName">Last Name</label>
                     <input type="text" class="form-control" id="userLastName" aria-describedby="emailHelp" placeholder="Enter last name" name="LastName" required>
                     <small id="lastNameHelp" class="form-text text-muted">Required</small>
                 </div>
                 <div class="form-group">
-                    <label for="userPhoneNo">Phone Number</label>
-                    <input type="text" class="form-control" id="userPhoneNo" aria-describedby="emailHelp" placeholder="Enter phone number" name="PhoneNum">
+                    <label id="lblShipToAddr" for="userShipToAddr">Shipping Address</label>
+                    <input type="text" class="form-control" id="userShipToAddr" aria-describedby="emailHelp" placeholder="Enter shipping address" name="ShipToAddr" required>
+                    <small id="addrHelp" class="form-text text-muted">Required</small>
+                </div>
+                <div class="form-group">
+                    <label id="lblState" for="inputState">State</label>
+                    <select id="inputState" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>AL</option>
+                        <option>AK</option>
+                        <option>AR</option>
+                        <option>AZ</option>
+                        <option>CA</option>
+                        <option>CO</option>
+                        <option>CT</option>
+                        <option>DE</option>
+                        <option>DC</option>
+                        <option>FL</option>
+                        <option>GA</option>
+                        <option>HI</option>
+                        <option>ID</option>
+                        <option>IL</option>
+                        <option>IN</option>
+                        <option>IA</option>
+                        <option>KS</option>
+                        <option>KY</option>
+                        <option>LA</option>
+                        <option>ME</option>
+                        <option>MD</option>
+                        <option>MA</option>
+                        <option>MI</option>
+                        <option>MN</option>
+                        <option>MS</option>
+                        <option>MO</option>
+                        <option>MT</option>
+                        <option>NE</option>
+                        <option>NV</option>
+                        <option>NH</option>
+                        <option>NJ</option>
+                        <option>NM</option>
+                        <option>NY</option>
+                        <option>NC</option>
+                        <option>ND</option>
+                        <option>OH</option>
+                        <option>OK</option>
+                        <option>OR</option>
+                        <option>PA</option>
+                        <option>RI</option>
+                        <option>SC</option>
+                        <option>SD</option>
+                        <option>TN</option>
+                        <option>TX</option>
+                        <option>UT</option>
+                        <option>VT</option>
+                        <option>VA</option>
+                        <option>WV</option>
+                        <option>WI</option>
+                        <option>WY</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label id="lblShipToZip" for="userShipToZip">Zip Code</label>
+                    <input type="text" class="form-control" id="userShipToZip" aria-describedby="emailHelp" placeholder="Enter shipping zip code" name="ShipToZip" required>
+                    <small id="zipHelp" class="form-text text-muted">Required</small>
+                </div>
+                <div class="form-group">
+                    <label id="lblUserPhoneNo" for="userPhoneNo">Phone Number</label>
+                    <input type="text" class="form-control" id="userPhoneNo" aria-describedby="emailHelp" placeholder="Enter phone number" name="PhoneNum" required>
                     <small id="phoneHelp" class="form-text text-muted">Enter a ten-digit phone number, area code first</small>
                 </div>
                 <div class="form-group">
-                    <label for="userEmail">Email Address</label>
+                    <label id="lblUserEmail" for="userEmail">Email Address</label>
                     <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email" name="EmailAddress" required>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
-                    <label for="userPassword">Password</label>
+                    <label id="lblUserPassword" for="userPassword">Password</label>
                     <input type="password" class="form-control" id="userPassword" placeholder="Password" name="Pw" required>
+                    <!--@Html.ValidationMessageFor(x => x.Pw)-->
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-danger btn-lg">Submit</button>
+                <br />
+                @Html.ValidationSummary("", new { @class = "text-danger" })
             </form>
         </div>
     </div>
 </div>
+
+
+
+<br />
+<br />
+<br />

@@ -1,6 +1,12 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700');
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url(/Content/Images/chemex1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +27,65 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#registrationHeading {
+    color: white;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 400;
+}
+
+#lblUserFirstName {
+    color: white;
+}
+
+#lblUserLastName {
+    color: white;
+}
+
+#lblShipToAddr {
+    color: white;
+}
+
+
+#lblState {
+    color: white;
+}
+
+#lblShipToZip {
+    color: white;
+}
+
+#lblUserPhoneNo {
+    color: white;
+}
+
+#lblUserEmail {
+    color: white;
+}
+
+#lblUserPassword {
+    color: white;
+}
+
+#registrationPageLogo {
+    color: white;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 400;
+    font-size: 60px;
+}
+
+#launchPageTronLogo {
+    color: black;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 400;
+    font-size: 60px;
+}
+
+#registrationSuccessMsg {
+    color: black;
+}
+
+#footerMsg {
+    color: white;
 }
