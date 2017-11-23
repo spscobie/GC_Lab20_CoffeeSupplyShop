@@ -1,16 +1,22 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.Net.Mail;
 
 namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
-{
-    public class User
+{    
+    public partial class User
     {
         //for server-side security
         private const string SALT = "lv3%";
+
+        private int custId;
+        public int CustId
+        {
+            get { return custId; }
+            set { custId = value; }
+        }
 
         //data and properties
         private string firstName;
@@ -55,18 +61,18 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
         }
 
         //constructors
-        public User (): this ("", "", "", "", "newUser") //must have the constructor below made or this produces an error!
+        public User() : this("", "", "", "", "newUser") //must have the constructor below made or this produces an error!
         {
 
         }
 
-        public User (string firstName, string lastName, string phoneNum, string emailAddress, string pw)
+        public User(string firstName, string lastName, string phoneNum, string emailAddress, string pw)
         {
-            FirstName   = firstName;
-            LastName     = lastName;
-            PhoneNum     = phoneNum;
+            FirstName = firstName;
+            LastName = lastName;
+            PhoneNum = phoneNum;
             EmailAddress = emailAddress;
-            Pw           = pw;
+            Pw = pw;
         }
     }
 }

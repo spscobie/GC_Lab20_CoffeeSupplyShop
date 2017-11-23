@@ -37,15 +37,36 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
         {
             if (ModelState.IsValid)
             {
-                //Added the object NewProduct to the DB!
-                //confirmation
-                ViewBag.FirstName = user.FirstName;
+                GroundswellEntities ORM = new GroundswellEntities();
 
-                return View();
+                List<User> OutputList = new List<User>();
+
+                OutputList = (from u in ORM.Users
+                              where u.EmailAddress == user.EmailAddress
+                              select u).ToList();
+
+                if (OutputList.Count == 0)
+                {
+                    ORM.Users.Add(user);
+                    ORM.SaveChanges();
+
+                    //TODO: Make the HTML use a pop-up/modal or alert and stay on registration page
+                    ViewBag.FirstName = user.FirstName;
+
+                    return View();
+                }
+                else
+                {
+                    //TODO: Add another tab to explain to the user that account is already established
+                    ViewBag.FirstName = "ALREADY TAKEN" +
+                        "";
+
+                    return View();
+                }
             }
             else
             {
-                // redirect user back to the form
+                //redirect user back to the form
                 return View("RegisterNewUser");
             }
         }
