@@ -1,4 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,700');
 
 body {
     padding-top: 50px;
@@ -88,4 +89,16 @@ textarea {
 
 #footerMsg {
     color: white;
+}
+
+.itemDesc {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.itemName {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
 }
