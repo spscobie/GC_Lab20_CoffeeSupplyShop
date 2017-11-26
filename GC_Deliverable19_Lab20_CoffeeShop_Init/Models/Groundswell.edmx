@@ -13,23 +13,27 @@
           <Property Name="ProductName" Type="varchar" MaxLength="100" />
           <Property Name="ProductDesc" Type="varchar" MaxLength="1000" />
           <Property Name="Qty" Type="int" />
-          <Property Name="price" Type="float" />
-          <Property Name="imgName" Type="varchar(max)" />
+          <Property Name="Price" Type="float" />
+          <Property Name="ImgName" Type="varchar(max)" />
         </EntityType>
-        <EntityType Name="User">
+        <EntityType Name="Users">
           <Key>
             <PropertyRef Name="CustId" />
           </Key>
           <Property Name="CustId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="varchar" MaxLength="100" />
           <Property Name="LastName" Type="varchar" MaxLength="100" />
+          <Property Name="ShiptToAddress" Type="varchar" MaxLength="100" />
+          <Property Name="ShipToCity" Type="varchar" MaxLength="100" />
+          <Property Name="ShipToState" Type="char" MaxLength="2" />
+          <Property Name="ShipToZip" Type="varchar" MaxLength="10" />
           <Property Name="PhoneNum" Type="char" MaxLength="12" />
           <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
           <Property Name="Pw" Type="varchar" MaxLength="256" />
         </EntityType>
         <EntityContainer Name="GroundswellModelStoreContainer">
           <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -44,8 +48,8 @@
           <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="ProductDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="Qty" Type="Int32" />
-          <Property Name="price" Type="Double" />
-          <Property Name="imgName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="ImgName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -54,11 +58,15 @@
           <Property Name="CustId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ShiptToAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ShipToCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ShipToState" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="ShipToZip" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNum" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
           <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Pw" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="GroundswellEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="GroundswellEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Items" EntityType="Self.Item" />
           <EntitySet Name="Users" EntityType="Self.User" />
         </EntityContainer>
@@ -67,7 +75,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="GroundswellModelStoreContainer" CdmEntityContainer="GroundswellEntities">
+        <EntityContainerMapping StorageEntityContainer="GroundswellModelStoreContainer" CdmEntityContainer="GroundswellEntities1">
           <EntitySetMapping Name="Items">
             <EntityTypeMapping TypeName="GroundswellModel.Item">
               <MappingFragment StoreEntitySet="Items">
@@ -75,17 +83,21 @@
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="ProductDesc" ColumnName="ProductDesc" />
                 <ScalarProperty Name="Qty" ColumnName="Qty" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="imgName" ColumnName="imgName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ImgName" ColumnName="ImgName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="GroundswellModel.User">
-              <MappingFragment StoreEntitySet="User">
+              <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="CustId" ColumnName="CustId" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="ShiptToAddress" ColumnName="ShiptToAddress" />
+                <ScalarProperty Name="ShipToCity" ColumnName="ShipToCity" />
+                <ScalarProperty Name="ShipToState" ColumnName="ShipToState" />
+                <ScalarProperty Name="ShipToZip" ColumnName="ShipToZip" />
                 <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
                 <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
                 <ScalarProperty Name="Pw" ColumnName="Pw" />

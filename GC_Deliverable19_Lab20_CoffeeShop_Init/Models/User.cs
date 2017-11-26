@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 
 namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
-{    
+{
     public partial class User
     {
         //for server-side security
@@ -15,7 +15,7 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
         public int CustId
         {
             get { return custId; }
-            set { custId = value; }
+            private set { custId = value; }
         }
 
         //data and properties
@@ -31,6 +31,35 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
         {
             get { return lastName; }
             set { lastName = value; }
+        }
+
+        private string shipToAddress;
+        public string ShipToAddress
+        {
+            get { return shipToAddress; }
+            set { shipToAddress = value; }
+        }
+
+        private string shipToCity;
+        public string ShipToCity
+        {
+            get { return shipToCity; }
+            set { shipToCity = value; }
+        }
+
+        private string shipToState;
+        public string ShipToState
+        {
+            get { return shipToState; }
+            set { shipToState = value; }
+        }
+
+
+        private string shipToZip;
+        public string ShipToZip
+        {
+            get { return shipToZip; }
+            set { shipToZip = value; }
         }
 
         private string phoneNum;
@@ -61,15 +90,19 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
         }
 
         //constructors
-        public User() : this("", "", "", "", "newUser") //must have the constructor below made or this produces an error!
+        public User() : this("", "", "", "", "", "", "", "", "") //must have the constructor below made or this produces an error!
         {
 
         }
 
-        public User(string firstName, string lastName, string phoneNum, string emailAddress, string pw)
+        public User(string firstName, string lastName, string shipToAddress, string shipToCity, string shipToState, string shipToZip, string phoneNum, string emailAddress, string pw)
         {
             FirstName = firstName;
             LastName = lastName;
+            ShipToAddress = shipToAddress;
+            ShipToCity = shipToCity;
+            ShipToState = shipToState;
+            ShipToZip = ShipToZip;
             PhoneNum = phoneNum;
             EmailAddress = emailAddress;
             Pw = pw;

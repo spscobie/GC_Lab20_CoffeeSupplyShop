@@ -20,7 +20,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <!--<li>@Html.ActionLink("Home", "Index", "Home")</li>-->
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Register", "RegisterNewUser", "Home")</li>
+                    <li>@Html.ActionLink("Login", "ListItems", "")</li>
                     <!--<li>@Html.ActionLink("About", "About", "Home")</li>-->
                     <!--<li>@Html.ActionLink("Contact", "Contact", "Home")</li>-->
                 </ul>
@@ -38,5 +40,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css" />
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+    <script type="text/javascript" src="~/Scripts/gSwellUserRegValidator.js"></script>
 </body>
 </html>

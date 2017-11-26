@@ -37,7 +37,7 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
         {
             if (ModelState.IsValid)
             {
-                GroundswellEntities ORM = new GroundswellEntities();
+                GroundswellEntities1 ORM = new GroundswellEntities1();
 
                 List<User> OutputList = new List<User>();
 
@@ -69,6 +69,11 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
                 //redirect user back to the form
                 return View("RegisterNewUser");
             }
+        }
+
+        public ActionResult ListItems ()
+        {
+            return View("ItemsView");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\sscobie\Documents\Visual Studio 2017\Projects\GC_Deliverable19_Lab20_CoffeeShop_Init\GC_Deliverable19_Lab20_CoffeeShop_Init\Models\GroundswellModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\sscobie\Documents\Visual Studio 2017\Projects\GC_Deliverable19_Lab20_CoffeeShop_Init\GC_Deliverable19_Lab20_CoffeeShop_Init\Models\Groundswell.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

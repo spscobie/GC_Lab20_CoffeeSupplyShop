@@ -13,10 +13,10 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GroundswellEntities : DbContext
+    public partial class GroundswellEntities1 : DbContext
     {
-        public GroundswellEntities()
-            : base("name=GroundswellEntities")
+        public GroundswellEntities1()
+            : base("name=GroundswellEntities1")
         {
         }
     
