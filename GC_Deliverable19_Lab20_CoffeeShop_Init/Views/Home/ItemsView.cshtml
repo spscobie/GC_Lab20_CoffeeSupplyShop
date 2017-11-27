@@ -3,5 +3,46 @@
     ViewBag.Title = "ItemsView";
 }
 
-<h2>ItemsView</h2>
+<br />
+<br />
+<div class="table-responsive">
+<table id="tblItems" class="table table-bordered table-hover">
+    <tr class="active">
+        <th>ProductId</th>
+        <th>ProductName</th>
+        <th>ProductDesc</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th colspan="2">Actions</th>
+    </tr>
 
+    @foreach (var item in ViewBag.Items)
+    {
+        <tr class="active">
+            <td>
+                @item.ProductId
+            </td>
+            <td>
+                @item.ProductName
+            </td>
+            <td>
+                @item.ProductDesc
+            </td>
+            <td align="right">
+                @string.Format("{0:n0}", item.Qty)
+            </td>
+            <td align="right">
+                @string.Format("{0:C}", item.Price)
+            </td>
+            <td align="center">
+                <a href="/Home/ItemEditForm?pid=@item.ProductId" class="btn btn-primary btn-xs">Edit</a>
+            </td>
+            <td align="center">
+                <a href="/Home/ItemDelete?pid=@item.ProductId" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?')">Drop</a>
+            </td>
+        </tr>
+     }
+</table>
+</div>
+<br />
+<a href="/Home/ItemAddForm" class="btn btn-success btn-lg">Add Product</a>

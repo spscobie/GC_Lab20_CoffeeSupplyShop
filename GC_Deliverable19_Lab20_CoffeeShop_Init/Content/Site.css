@@ -36,6 +36,50 @@ textarea {
     font-weight: 400;
 }
 
+#lblAddItemHeader {
+    color: white;
+}
+
+#lblAddItemProdName {
+    color: white;
+}
+
+#lblAddItemProdDesc {
+    color: white;
+}
+
+#lblAddItemQty {
+    color: white;
+}
+
+#lblAddItemPrice {
+    color: white;
+}
+
+#lblEditItemHeader {
+    color: white;
+}
+
+#lblEditItemProdId {
+    color: white;
+}
+
+#lblEditItemProdName {
+    color: white;
+}
+
+#lblEditItemProdDesc {
+    color: white;
+}
+
+#lblEditItemQty {
+    color: white;
+}
+
+#lblEditItemPrice {
+    color: white;
+}
+
 #lblUserFirstName {
     color: white;
 }

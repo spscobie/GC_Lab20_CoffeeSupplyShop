@@ -114,7 +114,9 @@
                     <input type="password" class="form-control" id="userPasswordConfirm" placeholder="Confirm password" name="PwConfirm" required />
                 </div>
                 <br />
-                <button type="submit" class="btn btn-danger btn-lg">Submit</button>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger btn-lg">Submit</button>
+                </div>
                 <br />
                 <br />
                 <div class="form-group">
@@ -122,6 +124,7 @@
                         <div id="messages"></div>
                     </div>
                 </div>
+                <br />
                 @Html.ValidationSummary("", new { @class = "text-danger" })
             </form>
         </div>

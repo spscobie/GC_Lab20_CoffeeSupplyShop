@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "ItemEditForm";
+}
+
+@model GC_Deliverable19_Lab20_CoffeeShop_Init.Models.Item
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form action="/Home/ItemEdit" method="post" class="pull-right">
+                <h1 id="registrationPageLogo" class="col">Groundswell</h1>
+                <h2 id="registrationHeading">New Product Registration</h2>
+                <br />
+                <h3 id="lblEditItemHeader">Update existing item below:</h3>
+                <div class="form-group">
+                    <label id="lblEditItemProdId" for="productId">Id</label>
+                    <input type="text" class="form-control" id="productId" aria-describedby="emailHelp" name="ProductId" value="@ViewBag.EditItem.ProductId" readonly>
+                </div>
+                <div class="form-group">
+                    <label id="lblEditItemProdName" for="productName">Name</label>
+                    <input type="text" class="form-control" id="productName" aria-describedby="emailHelp" name="ProductName" value="@ViewBag.EditItem.ProductName">
+                </div>
+                <div class="form-group">
+                    <label id="lblEditItemProdDesc" for="productDesc">Description</label>
+                    <input type="text" class="form-control" id="productDesc" aria-describedby="emailHelp" name="ProductDesc" value="@ViewBag.EditItem.ProductDesc">
+                    <!--<textarea class="form-control" rows="3" cols="1" id="productDesc" aria-describedby="emailHelp" name="ProductDesc" placeholder="Enter a description of the product" required></textarea>-->
+                </div>
+                <div class="form-group">
+                    <label id="lblEditItemQty" for="initQty">Quantity</label>
+                    <input type="text" class="form-control" id="initQty" aria-describedby="emailHelp" name="Qty" value="@ViewBag.EditItem.Qty">
+                </div>
+                <div class="form-group">
+                    <label id="lblEditItemPrice" for="price">Item Price</label>
+                    <input type="text" class="form-control" id="price" aria-describedby="emailHelp" name="Price" value="@ViewBag.EditItem.Price">
+                </div>
+                <br />
+                <div class="form-group">
+                    <!--<input type="submit" value="Update" />-->
+                    <button type="submit" class="btn btn-success btn-lg">Update</button>
+                </div>
+                <br />
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+            </form>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+

@@ -285,6 +285,10 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\ItemsView.cshtml" />
+    <Content Include="Views\Home\ItemEditForm.cshtml" />
+    <Content Include="Views\Home\ItemAddForm.cshtml" />
+    <Content Include="Views\Home\ItemDelete.cshtml" />
+    <Content Include="Views\Home\ItemAdd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

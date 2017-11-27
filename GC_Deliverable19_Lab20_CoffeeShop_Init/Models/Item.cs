@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
 {
@@ -10,10 +13,11 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
         public int ProductId
         {
             get { return productId; }
-            set { productId = value; }
+            private set { productId = value; }
         }
 
         private string productName;
+        [Required(ErrorMessage = "Product Name is required!")]
         public string ProductName
         {
             get { return productName; }
@@ -21,6 +25,7 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
         }
 
         private string productDesc;
+        [Required(ErrorMessage = "Product Description is required!")]
         public string ProductDesc
         {
             get { return productDesc; }
@@ -28,6 +33,8 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
         }
 
         private int qty;
+        [Range(0, 100_000, ErrorMessage = "Quantity must be positive and not greater than 100,000!")]
+        [Required(ErrorMessage = "You must enter in a quantity!")]
         public int Qty
         {
             get { return qty; }
@@ -35,6 +42,8 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
         }
 
         private double price;
+        [Range(0.00, 20_000.00, ErrorMessage = "Price must be positive, but no greater than $20,000!")]
+        [Required(ErrorMessage = "Product must have a price!")]
         public double Price
         {
             get { return price; }
