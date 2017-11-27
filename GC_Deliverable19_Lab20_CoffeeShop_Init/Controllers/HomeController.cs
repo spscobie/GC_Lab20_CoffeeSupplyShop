@@ -122,6 +122,8 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
 
         public ActionResult ItemEdit (Item editItem)
         {
+            string str =Request.Params["ProductId"];
+
             GroundswellEntities1 ORM = new GroundswellEntities1();
 
             //int i = editItem.ProductId;
@@ -146,8 +148,8 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
             Item editItem = ORM.Items.Find(pid);
             if (editItem != null)
             {
-                ViewBag.EditItem = editItem;
-                return View("ItemEditForm");
+               // ViewBag.EditItem = editItem;
+                return View("ItemEditForm",editItem);
             }
             else
             {

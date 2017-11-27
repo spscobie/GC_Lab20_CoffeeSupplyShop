@@ -15,24 +15,24 @@
                 <h3 id="lblEditItemHeader">Update existing item below:</h3>
                 <div class="form-group">
                     <label id="lblEditItemProdId" for="productId">Id</label>
-                    <input type="text" class="form-control" id="productId" aria-describedby="emailHelp" name="ProductId" value="@ViewBag.EditItem.ProductId" readonly>
+                    <input type="text" class="form-control" id="productId" aria-describedby="emailHelp" name="ProductId" value="@Model.ProductId" readonly>
                 </div>
                 <div class="form-group">
                     <label id="lblEditItemProdName" for="productName">Name</label>
-                    <input type="text" class="form-control" id="productName" aria-describedby="emailHelp" name="ProductName" value="@ViewBag.EditItem.ProductName">
+                    <input type="text" class="form-control" id="productName" aria-describedby="emailHelp" name="ProductName" value="@Model.ProductName">
                 </div>
                 <div class="form-group">
                     <label id="lblEditItemProdDesc" for="productDesc">Description</label>
-                    <input type="text" class="form-control" id="productDesc" aria-describedby="emailHelp" name="ProductDesc" value="@ViewBag.EditItem.ProductDesc">
+                    <input type="text" class="form-control" id="productDesc" aria-describedby="emailHelp" name="ProductDesc" value="@Model.ProductDesc">
                     <!--<textarea class="form-control" rows="3" cols="1" id="productDesc" aria-describedby="emailHelp" name="ProductDesc" placeholder="Enter a description of the product" required></textarea>-->
                 </div>
                 <div class="form-group">
                     <label id="lblEditItemQty" for="initQty">Quantity</label>
-                    <input type="text" class="form-control" id="initQty" aria-describedby="emailHelp" name="Qty" value="@ViewBag.EditItem.Qty">
+                    <input type="text" class="form-control" id="initQty" aria-describedby="emailHelp" name="Qty" value="@Model.Qty">
                 </div>
                 <div class="form-group">
                     <label id="lblEditItemPrice" for="price">Item Price</label>
-                    <input type="text" class="form-control" id="price" aria-describedby="emailHelp" name="Price" value="@ViewBag.EditItem.Price">
+                    <input type="text" class="form-control" id="price" aria-describedby="emailHelp" name="Price" value="@Model.Price">
                 </div>
                 <br />
                 <div class="form-group">

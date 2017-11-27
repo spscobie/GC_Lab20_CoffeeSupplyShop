@@ -13,7 +13,7 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
         public int ProductId
         {
             get { return productId; }
-            private set { productId = value; }
+            set { productId = value; }
         }
 
         private string productName;
