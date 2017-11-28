@@ -89,6 +89,7 @@ VALUES ('Stephen', 'Scobie', '1111 Awesome St', 'Kalamaziggedy', 'MI', '49999', 
 	   ('Chuck', 'Norris', '1234 Foot Fist Way', 'Walker', 'TX', '75666', '666-666-6666', 'nunchucks@aol.com', 'd4c3b2a1'),
 	   ('John R', 'Dequindre', '1 Unknown Ln', 'Detroit', 'MI', '48000', '999-999-9999', 'smashmcgavin@irishfightinghouse.com', 'zZzZ2134');
 
+USE Groundswell
 SELECT *
 FROM Users
 

@@ -32,19 +32,10 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
         {
             if (ModelState.IsValid)
             {
-                GroundswellEntities1 ORM = new GroundswellEntities1();
+                GroundswellDAL DAL = new GroundswellDAL();
 
-                List<User> OutputList = new List<User>();
-
-                OutputList = (from u in ORM.Users
-                              where u.EmailAddress == user.EmailAddress
-                              select u).ToList();
-
-                if (OutputList.Count == 0)
+                if (DAL.InsertUser(user) != null)
                 {
-                    ORM.Users.Add(user);
-                    ORM.SaveChanges();
-
                     //TODO: Make the HTML use a pop-up/modal or alert and stay on registration page
                     ViewBag.FirstName = user.FirstName;
 
@@ -75,18 +66,10 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
         {
             if (ModelState.IsValid)
             {
-                GroundswellEntities1 ORM = new GroundswellEntities1();
+                GroundswellDAL DAL = new GroundswellDAL();
 
-                List<Item> items = new List<Item>();
-                items = (from i in ORM.Items
-                         where i.ProductName == newItem.ProductName
-                         select i).ToList();
-
-                if (items.Count == 0)
+                if (DAL.InsertItem(newItem) != null)
                 {
-                    ORM.Items.Add(newItem);
-                    ORM.SaveChanges();
-
                     return RedirectToAction("ListItems");
                 }
                 else
@@ -106,50 +89,32 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
             return View();
         }
 
-        public ActionResult ItemDelete(int pid)
+        public ActionResult ItemDelete (int pid)
         {
-            GroundswellEntities1 ORM = new GroundswellEntities1();
+            GroundswellDAL DAL = new GroundswellDAL();
 
-            Item i = ORM.Items.Find(pid);
-            if (i != null)
-            {
-                ORM.Items.Remove(i);
-                ORM.SaveChanges();
-            }
+            DAL.DropItem(pid);
 
             return RedirectToAction("ListItems");
         }
 
         public ActionResult ItemEdit (Item editItem)
         {
-            string str =Request.Params["ProductId"];
+            GroundswellDAL DAL = new GroundswellDAL();
 
-            GroundswellEntities1 ORM = new GroundswellEntities1();
-
-            //int i = editItem.ProductId;
-            //string str = editItem.ProductId.ToString();
-
-            Item temp = ORM.Items.Find(editItem.ProductId);
-            temp.ProductName = editItem.ProductName;
-            temp.ProductDesc = editItem.ProductDesc;
-            temp.Qty = editItem.Qty;
-            temp.Price = editItem.Price;
-
-            ORM.Entry(temp).State = System.Data.Entity.EntityState.Modified;
-            ORM.SaveChanges();
+            DAL.UpdateItem(editItem);
 
             return RedirectToAction("ListItems");
         }
 
         public ActionResult ItemEditForm (int pid)
         {
-            GroundswellEntities1 ORM = new GroundswellEntities1();
+            GroundswellDAL DAL = new GroundswellDAL();
 
-            Item editItem = ORM.Items.Find(pid);
-            if (editItem != null)
+            if (DAL.RetrieveItem(pid) != null)
             {
-               // ViewBag.EditItem = editItem;
-                return View("ItemEditForm",editItem);
+                ViewBag.EditItem = DAL.RetrieveItem(pid);
+                return View("ItemEditForm");
             }
             else
             {
@@ -159,12 +124,9 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
 
         public ActionResult ListItems()
         {
-            GroundswellEntities1 ORM = new GroundswellEntities1();
-            List<Item> items = new List<Item>();
+            GroundswellDAL DAL = new GroundswellDAL();
 
-            items = ORM.Items.ToList();
-
-            ViewBag.Items = items;
+            ViewBag.Items = DAL.RetrieveItemsAll();
 
             return View("ItemsView");
         }

@@ -57,12 +57,12 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
             set { imgName = value; }
         }
 
-        public Item () : this ("", "", 0, 0, "")
+        public Item() : this("", "", 0, 0, "")
         {
 
         }
 
-        public Item (string productName, string productDesc, int qty, double price, string imgName)
+        public Item(string productName, string productDesc, int qty, double price, string imgName)
         {
             ProductName = productName;
             ProductDesc = productDesc;

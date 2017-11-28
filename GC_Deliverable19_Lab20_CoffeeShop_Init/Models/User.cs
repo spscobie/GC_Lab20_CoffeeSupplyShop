@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Text.RegularExpressions;
 
 namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
 {
@@ -15,7 +16,7 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Models
         public int CustId
         {
             get { return custId; }
-            private set { custId = value; }
+            set { custId = value; }
         }
 
         //data and properties
