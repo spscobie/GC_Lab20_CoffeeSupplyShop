@@ -28,10 +28,10 @@ SET @pw1 = 'aBcD1234'
 
 USE Groundswell;
 INSERT INTO [User]
-VALUES ('Stephen', 'Scobie', '777-777-7777', 'spscobie@gmail.com', HASHBYTES('SHA2_256', CONVERT(nvarchar(4000), 'aBcD1234'))),
-	   ('Grant', 'Chirpus', '888-888-8888', 'gChirpz@gmail.com', HASHBYTES('SHA2_256', CONVERT(nvarchar(4000), 'a1b2c3d4'))),
-	   ('Chuck', 'Norris', '666-666-6666', 'nunchucks@aol.com', HASHBYTES('SHA2_256', CONVERT(nvarchar(4000), 'd4c3b2a1'))),
-	   ('John R', 'Dequindre', '999-999-9999', 'smashmcgavin@irishfightinghouse.com', CONVERT(varchar(4000), 'zZzZ2134')));
+VALUES ('Stephen', 'Scobie', '777-777-7777', 'spscobie@gmail.com', HASHBYTES('SHA2_256', CONVERT(nvarchar(max), 'aBcD1234'))),
+	   ('Grant', 'Chirpus', '888-888-8888', 'gChirpz@gmail.com', HASHBYTES('SHA2_256', CONVERT(nvarchar(max), 'a1b2c3d4'))),
+	   ('Chuck', 'Norris', '666-666-6666', 'nunchucks@aol.com', HASHBYTES('SHA2_256', CONVERT(nvarchar(max), 'd4c3b2a1'))),
+	   ('John R', 'Dequindre', '999-999-9999', 'smashmcgavin@irishfightinghouse.com', CONVERT(varchar(max), 'zZzZ2134'))
 
 DELETE FROM [User]
 

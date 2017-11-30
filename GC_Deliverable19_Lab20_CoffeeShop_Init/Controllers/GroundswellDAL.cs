@@ -12,7 +12,7 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
 {
     public class GroundswellDAL
     {
-        private GroundswellEntities1 ORM = new GroundswellEntities1();
+        private GroundswellEntities ORM = new GroundswellEntities();
 
         public void DropItem (int pid)
         {
@@ -80,10 +80,11 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
 
         public List<User> RetrieveUser (User usr)
         {
-            List<User> users = new List<User>();
-            users = (from u in ORM.Users
-                     where u.EmailAddress == usr.EmailAddress
-                     select u).ToList();
+            List<User> items = new List<User>();
+
+            List<User> users = (from u in ORM.Users
+                                where u.EmailAddress == usr.EmailAddress
+                                select u).ToList();
 
             return users;
         }

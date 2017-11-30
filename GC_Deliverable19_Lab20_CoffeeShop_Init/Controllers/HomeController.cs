@@ -28,16 +28,16 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
         }
         */
 
-        public ActionResult DB_InsertNewUser(User user)
+        public ActionResult DB_InsertNewUser(User newUser)
         {
             if (ModelState.IsValid)
             {
                 GroundswellDAL DAL = new GroundswellDAL();
 
-                if (DAL.InsertUser(user) != null)
+                if (DAL.InsertUser(newUser) != null)
                 {
                     //TODO: Make the HTML use a pop-up/modal or alert and stay on registration page
-                    ViewBag.FirstName = user.FirstName;
+                    ViewBag.FirstName = newUser.FirstName;
 
                     return View();
                 }
@@ -56,9 +56,12 @@ namespace GC_Deliverable19_Lab20_CoffeeShop_Init.Controllers
             }
         }
 
-
         public ActionResult Index()
         {
+            GroundswellDAL DAL = new GroundswellDAL();
+
+            ViewBag.Items = DAL.RetrieveItemsAll();
+
             return View();
         }
 
